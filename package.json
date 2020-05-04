@@ -2,15 +2,24 @@
   "name": "rest-pact-example",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest client/__tests__/ --runInBand",
+    "publish:pact": "node ./publish-pact.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Daniel Pecos Martinez",
+  "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.10.0",
+    "jest": "^25.5.4",
+    "jest-pact": "^0.5.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
