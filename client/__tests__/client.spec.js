@@ -25,7 +25,7 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
         const beerListSuccessResponse = {
           status: 200,
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json; charset=utf-8',
           },
           body: expectedBeerListFromServer,
         };
@@ -62,7 +62,7 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
             method: 'GET',
             path: '/beer',
             query: {
-              name: Matchers.like('Nissefar'),
+              name: Matchers.string('Nissefar'),
             },
             headers: {
               Accept: 'application/json',
@@ -73,13 +73,13 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
         const beerByNameSuccessResponse = {
           status: 200,
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json; charset=utf-8',
           },
           body: expectedBeerResponse,
         };
 
         const interaction = {
-          state: 'I have Nissefar beer in my list of beers',
+          state: 'I have Nissefar in my list of beers',
           ...beerByNameRequest,
           willRespondWith: beerByNameSuccessResponse,
         };

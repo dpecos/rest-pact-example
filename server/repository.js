@@ -7,8 +7,8 @@ class Repository {
     return this.entities;
   }
 
-  getById(id) {
-    return this.entities.find((entity) => id == entity.id);
+  getByName(name) {
+    return this.entities.find((entity) => name == entity.name);
   }
 
   insert(entity) {

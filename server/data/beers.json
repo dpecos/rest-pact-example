@@ -6,14 +6,7 @@
     "score": 2.14,
     "abv": 0
   },
-  {
-    "brewery": "Brasserie St-Feuillien",
-    "name": "Cuvée de Noël",
-    "score": 6.43,
-    "abv": 9
-  },
   { "brewery": "Dahls", "name": "Julebrygg", "score": 5.19, "abv": 4.5 },
-  { "brewery": "Fanø Bryghus", "name": "Julebryg", "score": 5.74, "abv": 7.2 },
   {
     "brewery": "Grans Bryggeri",
     "name": "Lade Gaards Brygghus Juleøl",
@@ -32,15 +25,5 @@
     "name": "Nissegodt",
     "score": 6.26,
     "abv": 4.5
-  },
-  { "brewery": "Inderøy", "name": "Nisseøl", "score": 6.06, "abv": 4.5 },
-  { "brewery": "Nøgne Ø", "name": "God Jul", "score": 5.89, "abv": 8.5 },
-  { "brewery": "Nøgne Ø", "name": "Julesnadder", "score": 7.19, "abv": 4.5 },
-  {
-    "brewery": "Nøgne Ø",
-    "name": "Special Holiday Ale",
-    "score": 6.71,
-    "abv": 9
-  },
-  { "brewery": "Ægir", "name": "Julebrygg", "score": 6.21, "abv": 4.7 }
+  }
 ]

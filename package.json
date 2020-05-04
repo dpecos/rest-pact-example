@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest client/__tests__/ --runInBand",
-    "publish:pact": "node ./publish-pact.js"
+    "test-consumer": "jest client/__tests__/ --runInBand",
+    "test-provider": "jest server/__tests__/ --runInBand --detectOpenHandles",
+    "publish-pacts": "node ./publish-pacts.js"
   },
   "author": "Daniel Pecos Martinez",
   "license": "MIT",
