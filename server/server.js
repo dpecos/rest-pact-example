@@ -31,7 +31,7 @@ app.get('/beers', (req, res) => {
 });
 
 app.get('/beer', (req, res) => {
-  const response = beerRepository.getByName(req.query.name);
+  const response = beerRepository.getById(req.query.id);
   if (response) {
     res.end(JSON.stringify(response));
   } else {

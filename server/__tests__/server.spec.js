@@ -44,7 +44,7 @@ describe('Pact Verification', () => {
             importData();
             return Promise.resolve(`Beers added to the db`);
           },
-          'I have Nissefar in my list of beers': () => {
+          'I have AffligemTripel in my list of beers': () => {
             importData();
             return Promise.resolve(`Beers added to the db`);
           },

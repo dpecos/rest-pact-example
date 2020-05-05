@@ -1,7 +1,6 @@
 'use strict';
 
 const { pactWith } = require('jest-pact');
-const { Matchers } = require('@pact-foundation/pact');
 
 const { fetchBeerList, fetchBeer } = require('../client');
 
@@ -49,10 +48,12 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
 
     describe('Retrieve specific beer by name', () => {
       const expectedBeerResponse = {
-        brewery: 'Haandbryggeriet',
-        name: 'Nissefar',
-        score: 6.07,
-        abv: 7,
+        alcohol: 8.5,
+        description:
+          'The king of the abbey beers. It is amber-gold and pours with a deep head and original aroma, delivering a complex, full bodied flavour. Pure enjoyment! Secondary fermentation in the bottle.',
+        id: 'AffligemTripel',
+        img: '/img/AffligemTripel.jpg',
+        name: 'Affligem Tripel',
       };
 
       beforeEach(() => {
@@ -62,7 +63,7 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
             method: 'GET',
             path: '/beer',
             query: {
-              name: Matchers.string('Nissefar'),
+              id: 'AffligemTripel',
             },
             headers: {
               Accept: 'application/json',
@@ -79,7 +80,7 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
         };
 
         const interaction = {
-          state: 'I have Nissefar in my list of beers',
+          state: 'I have AffligemTripel in my list of beers',
           ...beerByNameRequest,
           willRespondWith: beerByNameSuccessResponse,
         };
@@ -87,7 +88,7 @@ pactWith({ consumer: 'Beer-Client', provider: 'Beer-Server' }, (provider) => {
       });
 
       it('returns a sucessful body', () => {
-        return fetchBeer('Nissefar', {
+        return fetchBeer('AffligemTripel', {
           url: provider.mockService.baseUrl,
         }).then((beer) => {
           expect(beer).toEqual(expectedBeerResponse);
