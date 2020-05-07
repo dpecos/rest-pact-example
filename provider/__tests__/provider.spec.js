@@ -26,12 +26,12 @@ describe('Pact Verification', () => {
   });
 
   it(
-    'validates the expectations of Beer-Server',
+    'validates the expectations of Beer-Provider',
     (done) => {
       let opts = {
         logLevel: 'WARN',
 
-        provider: 'Beer-Server',
+        provider: 'Beer-Provider',
         providerVersion: commitId,
         providerBaseUrl: 'http://localhost:8081',
 
@@ -60,7 +60,7 @@ describe('Pact Verification', () => {
         // enablePending: true,
 
         // Local pacts
-        pactUrls: [path.resolve('pact/pacts/beer-client-beer-server.json')],
+        pactUrls: [path.resolve('pact/pacts/beer-consumer-beer-provider.json')],
 
         // Fetch pacts from broker
         // pactBrokerUrl: 'https://test.pact.dius.com.au/',
