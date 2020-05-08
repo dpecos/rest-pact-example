@@ -59,8 +59,8 @@ pactWith(
         };
 
         beforeEach(() => {
-          const beerByNameRequest = {
-            uponReceiving: 'A request for a beer by name',
+          const beerByIdRequest = {
+            uponReceiving: 'A request for a beer by id',
             withRequest: {
               method: 'GET',
               path: '/beer',
@@ -73,7 +73,7 @@ pactWith(
             },
           };
 
-          const beerByNameSuccessResponse = {
+          const beerByIdSuccessResponse = {
             status: 200,
             headers: {
               'Content-Type': 'application/json; charset=utf-8',
@@ -83,8 +83,8 @@ pactWith(
 
           const interaction = {
             state: 'I have AffligemTripel in my list of beers',
-            ...beerByNameRequest,
-            willRespondWith: beerByNameSuccessResponse,
+            ...beerByIdRequest,
+            willRespondWith: beerByIdSuccessResponse,
           };
           return provider.addInteraction(interaction);
         });
